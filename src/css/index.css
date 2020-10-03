@@ -11,7 +11,7 @@
 
 @font-face {
   font-family: "Cooper";
-  src: url("/fonts/Cooper.ttf") format("truetype");
+  src: url("/fonts/Cooper.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
