@@ -1,12 +1,13 @@
 module.exports = {
   siteMetadata: {
-    title: `Subtle Indonesian Datingg`,
+    title: `Subtle Indonesian Dating`,
     description: `Find a soulmate hotter than a Geprek Bensu level 5 meal.`,
     author: `@subtleindodating`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-postcss`,
+    `gatsby-plugin-styled-components`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -19,13 +20,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `Subtle Indonesian Dating`,
+        short_name: `subtleindodating`,
         start_url: `/`,
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/bensu.png`, // This path is relative to the root of the site.
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
