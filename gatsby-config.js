@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Subtle Indonesian Dating`,
+    title: `Subtle Indonesian Matches`,
     description: `Find a soulmate hotter than a Geprek Bensu level 5 meal.`,
-    author: `@subtleindodating`,
+    author: `@subtleindomatches`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -20,8 +20,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Subtle Indonesian Dating`,
-        short_name: `subtleindodating`,
+        name: `Subtle Indonesian Matches`,
+        short_name: `subtleindodomatches`,
         start_url: `/`,
         background_color: `#663399`,
         theme_color: `#663399`,

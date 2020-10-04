@@ -1,13 +1,11 @@
 import React from "react"
 import PecelText from "../PecelText"
 import SEO from "../seo"
-import SpinningImage from "../SpinningImage"
-import Martabak from "../../images/martabak.png"
-import Amer from "../../images/amer.png"
-import WingHeng from "../../images/winghen.png"
+import Martabak from "../images/Martabak"
 import Bensu from "../../images/bensu.png"
 import Title from "../Title"
-import Mangkok from "../../images/mangkok.png"
+import Amer from "../images/Amer"
+import WingHeng from "../images/WingHeng"
 
 const IndexPage = () => (
   <>
@@ -30,24 +28,27 @@ const IndexPage = () => (
         </div>
       </div>
       <div>
-        <img src={Bensu} className="h-auto w-2/12 absolute bottom-0 left-0" />
+        <img
+          src={Bensu}
+          className="h-auto w-2/12 absolute bottom-0 left-0"
+          alt="bensu"
+        />
       </div>
       <div className="w-full flex flex-col justify-center items-center md:w-3/4">
         <Title />
       </div>
       <div className="w-full flex flex-row justify-center md:justify-between mt-12">
-        <SpinningImage src={Martabak} />
-        <SpinningImage src={WingHeng} className="hidden md:block" />
-        <SpinningImage src={Amer} className="hidden md:block" />
-        <SpinningImage src={Mangkok} className="hidden md:block" />
+        <Martabak />
+        <Amer />
+        <WingHeng />
       </div>
       <div className="pt-16 md:pt-0 title font-bold">
         Find your new martabak and chill partner, using machine learning.
       </div>
-      <div className="mt-3">
-        <button>
+      <div className="mt-3 absolute " style={{ bottom: "1em" }}>
+        <a href="#main-section">
           <PecelText text="Start" />
-        </button>
+        </a>
       </div>
     </div>
   </>
