@@ -2,6 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import Img from "gatsby-image"
 import { useStaticQuery, graphql } from "gatsby"
+import MartabakImage from "../../images/martabak.png"
 
 const Wrapper = styled.div`
   @keyframes spin {
@@ -33,15 +34,16 @@ const query = graphql`
   }
 `
 
-const SpinningImage = ({ src, ...rest }) => {
+const Martabak = ({ src, ...rest }) => {
   const data = useStaticQuery(query)
   return (
     <Wrapper {...rest}>
       <div className="w-20 h-auto">
-        <Img fluid={data.file.childImageSharp.fluid} className="spin" />
+        {/* <Img fluid={data.file.childImageSharp.fluid} className="spin" /> */}
+        <img src={MartabakImage} className="spin" />
       </div>
     </Wrapper>
   )
 }
 
-export default SpinningImage
+export default Martabak

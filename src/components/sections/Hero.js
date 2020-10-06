@@ -1,11 +1,11 @@
 import React, { useState } from "react"
-import PecelText from "../PecelText"
 import SEO from "../seo"
 import Martabak from "../images/Martabak"
 import Bensu from "../../images/bensu.png"
 import Title from "../Title"
 import { navigate } from "gatsby"
 import Amer from "../images/Amer"
+import Wingheng from "../images/WingHeng"
 
 const IndexPage = () => {
   const [user, setUser] = useState({})
@@ -73,20 +73,24 @@ const IndexPage = () => {
             className="h-auto w-2/12 absolute bottom-0 left-0"
             alt="bensu"
           />
+          <Wingheng className="absolute bottom-0 right-0 hidden md:block" />
         </div>
         <div className="w-full flex flex-col md:flex-row justify-center items-center md:justify-between mt-4 md:mt-8">
-          <div className="flex-1">
+          {/* <div className="flex-1">
             <Martabak className="hidden md:block" />
-          </div>
+          </div> */}
           <Title />
-          <div className="flex-1">
+          {/* <div className="flex-1">
             <Amer className="hidden md:block" />
-          </div>
+          </div> */}
         </div>
         <div className="block md:hidden">
           <Martabak />
         </div>
-        <div className="pt-2 md:pt-8 title font-bold">
+        <div className="pt-2 md:pt-8 title font-bold flex flex-row items-center">
+          <div className="flex-1">
+            <Martabak className="hidden md:block" />
+          </div>
           <div className="flex flex-col items-center w-full title">
             <div className="font-bold text-lg"> We are on Private Beta</div>
             <div className="text-sm">
@@ -130,6 +134,9 @@ const IndexPage = () => {
             <a className="mt-2" href="#main-section">
               Learn more
             </a>
+          </div>
+          <div className="flex-1 relative">
+            <Amer className="hidden md:block" />
           </div>
         </div>
       </div>

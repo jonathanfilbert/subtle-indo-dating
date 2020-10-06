@@ -2,6 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import Img from "gatsby-image"
 import { useStaticQuery, graphql } from "gatsby"
+import WinghengImage from "../../images/winghen.png"
 
 const Wrapper = styled.div`
   width: 10em;
@@ -46,7 +47,7 @@ const WingHeng = ({ src, ...rest }) => {
   const data = useStaticQuery(query)
   return (
     <Wrapper className="w-32 max-w-xs h-auto" {...rest}>
-      <Img fluid={data.file.childImageSharp.fluid} className="jiggle" />
+      <img src={WinghengImage} className="jiggle" />
     </Wrapper>
   )
 }

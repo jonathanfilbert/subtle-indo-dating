@@ -2,6 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import Img from "gatsby-image"
 import { useStaticQuery, graphql } from "gatsby"
+import AmerImage from "../../images/amer.png"
 
 const Wrapper = styled.div`
   position: relative;
@@ -45,7 +46,8 @@ const SpinningImage = ({ src, ...rest }) => {
   return (
     <Wrapper {...rest}>
       <div className="w-20">
-        <Img fluid={data.file.childImageSharp.fluid} className="shake" />
+        {/* <Img fluid={data.file.childImageSharp.fluid} className="shake" /> */}
+        <img src={AmerImage} className="shake" />
       </div>
     </Wrapper>
   )

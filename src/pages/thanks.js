@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import PecelText from "../components/PecelText"
-import { navigate, useStaticQuery } from "gatsby"
+import { navigate, useStaticQuery, graphql } from "gatsby"
 import * as clipboard from "clipboard-polyfill/text"
 import Img from "gatsby-image"
 import styled from "styled-components"
