@@ -1,11 +1,12 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "subtle_indonesian_matches",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "Haha",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Jonathan Filbert",
   "dependencies": {
     "babel-plugin-styled-components": "^1.11.1",
+    "clipboard-polyfill": "^3.0.1",
     "gatsby": "^2.24.66",
     "gatsby-image": "^2.4.20",
     "gatsby-plugin-manifest": "^2.4.32",

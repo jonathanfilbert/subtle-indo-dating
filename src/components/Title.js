@@ -2,15 +2,7 @@ import * as React from "react"
 
 function Title(props) {
   return (
-    <svg
-      width={141}
-      height={22}
-      viewBox="0 0 141 22"
-      fill="none"
-      {...props}
-      width="100%"
-      height="100%"
-    >
+    <svg viewBox="0 0 141 22" fill="none" {...props} width="100%" height="100%">
       <g filter="url(#prefix__filter0_d)">
         <mask
           id="prefix__a"
