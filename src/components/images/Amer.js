@@ -4,8 +4,6 @@ import Img from "gatsby-image"
 import { useStaticQuery, graphql } from "gatsby"
 
 const Wrapper = styled.div`
-  width: 10em;
-  max-width: 200px;
   position: relative;
   @keyframes shake {
     to {
@@ -45,8 +43,10 @@ const query = graphql`
 const SpinningImage = ({ src, ...rest }) => {
   const data = useStaticQuery(query)
   return (
-    <Wrapper className="w-32 max-w-xs h-auto" {...rest}>
-      <Img fluid={data.file.childImageSharp.fluid} className="shake" />
+    <Wrapper {...rest}>
+      <div className="w-20">
+        <Img fluid={data.file.childImageSharp.fluid} className="shake" />
+      </div>
     </Wrapper>
   )
 }

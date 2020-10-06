@@ -1,18 +1,57 @@
-import React from "react"
+import React, { useState } from "react"
 import PecelText from "../PecelText"
 import SEO from "../seo"
 import Martabak from "../images/Martabak"
 import Bensu from "../../images/bensu.png"
 import Title from "../Title"
+import { navigate } from "gatsby"
 import Amer from "../images/Amer"
-import WingHeng from "../images/WingHeng"
 
 const IndexPage = () => {
+  const [user, setUser] = useState({})
+  const handleSetName = name => {
+    setUser(prev => ({
+      ...prev,
+      name: name,
+    }))
+  }
+  const handleSetSchool = school => {
+    setUser(prev => ({
+      ...prev,
+      school: school,
+    }))
+  }
+
+  const handleSetIG = username => {
+    setUser(prev => ({
+      ...prev,
+      username: username,
+    }))
+  }
+
+  const handlePost = async () => {
+    if (
+      user.name === undefined ||
+      user.school === undefined ||
+      user.username === undefined
+    ) {
+      alert("Please fill in every field.")
+    } else {
+      await fetch(process.env.GATSBY_ZAPIER_LINK, {
+        method: "POST",
+        body: JSON.stringify(user),
+      })
+      navigate("/thanks")
+    }
+  }
   return (
     <>
       <SEO title="Home" />
-      <div className="w-screen h-screen bg-white flex justify-center items-center px-6 text-center flex-col relative pt-3 overflow-hidden">
-        <div className="absolute top-0 title flex flex-col justify-center items-center">
+      <div
+        className="w-screen bg-white flex justify-center items-center px-6 text-center flex-col relative pt-3 overflow-hidden"
+        style={{ minHeight: "90vh" }}
+      >
+        <div className="flex flex-col justify-center items-center title text-sm">
           <div>
             Shamelessly inspired by{" "}
             <a href="https://subtleasianmatches.com/" className="font-bold">
@@ -35,21 +74,63 @@ const IndexPage = () => {
             alt="bensu"
           />
         </div>
-        <div className="w-full flex flex-col justify-center items-center md:w-3/4">
+        <div className="w-full flex flex-col md:flex-row justify-center items-center md:justify-between mt-4 md:mt-8">
+          <div className="flex-1">
+            <Martabak className="hidden md:block" />
+          </div>
           <Title />
+          <div className="flex-1">
+            <Amer className="hidden md:block" />
+          </div>
         </div>
-        <div className="w-full flex flex-row justify-center md:justify-between mt-12">
+        <div className="block md:hidden">
           <Martabak />
-          <Amer />
-          <WingHeng />
         </div>
-        <div className="pt-16 md:pt-0 title font-bold">
-          Find your new martabak and chill partner, using machine learning.
-        </div>
-        <div className="mt-8">
-          <a href="#main-section">
-            <PecelText text="FIND MINE" />
-          </a>
+        <div className="pt-2 md:pt-8 title font-bold">
+          <div className="flex flex-col items-center w-full title">
+            <div className="font-bold text-lg"> We are on Private Beta</div>
+            <div className="text-sm">
+              1. Follow us on{" "}
+              <a
+                className="font-bold"
+                target="__blank"
+                href="https://www.instagram.com/subtleindomatches/"
+              >
+                Instagram
+              </a>
+            </div>
+            <div className="text-sm">2. Fill in the form below</div>
+            <div className="text-sm">
+              3. We'll reach out to you via Instagram DM
+            </div>
+            <input
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-md mt-2"
+              placeholder="Name"
+              value={user.name}
+              onChange={e => handleSetName(e.target.value)}
+            />
+            <input
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-md"
+              placeholder="Instagram Username"
+              value={user.username}
+              onChange={e => handleSetIG(e.target.value)}
+            />
+            <input
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-md"
+              placeholder="School"
+              value={user.school}
+              onChange={e => handleSetSchool(e.target.value)}
+            />
+            <button
+              className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none mt-3"
+              onClick={() => handlePost()}
+            >
+              Send me an invite
+            </button>
+            <a className="mt-2" href="#main-section">
+              Learn more
+            </a>
+          </div>
         </div>
       </div>
     </>
