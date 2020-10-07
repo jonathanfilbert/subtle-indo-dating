@@ -10,12 +10,7 @@ const query = graphql`
         node {
           childImageSharp {
             fluid(maxWidth: 600, grayscale: true) {
-              base64
-              tracedSVG
-              aspectRatio
-              srcWebp
-              srcSetWebp
-              originalName
+              ...GatsbyImageSharpFluid
             }
           }
           relativePath
@@ -27,12 +22,7 @@ const query = graphql`
         node {
           childImageSharp {
             fluid(maxWidth: 600, grayscale: true) {
-              base64
-              tracedSVG
-              aspectRatio
-              srcWebp
-              srcSetWebp
-              originalName
+              ...GatsbyImageSharpFluid
             }
           }
           relativePath
@@ -44,12 +34,7 @@ const query = graphql`
         node {
           childImageSharp {
             fluid(maxWidth: 600, grayscale: true) {
-              base64
-              tracedSVG
-              aspectRatio
-              srcWebp
-              srcSetWebp
-              originalName
+              ...GatsbyImageSharpFluid
             }
           }
           relativePath
@@ -61,12 +46,7 @@ const query = graphql`
         node {
           childImageSharp {
             fluid(maxWidth: 600, grayscale: true) {
-              base64
-              tracedSVG
-              aspectRatio
-              srcWebp
-              srcSetWebp
-              originalName
+              ...GatsbyImageSharpFluid
             }
           }
           relativePath
@@ -78,12 +58,7 @@ const query = graphql`
         node {
           childImageSharp {
             fluid(maxWidth: 600, grayscale: true) {
-              base64
-              tracedSVG
-              aspectRatio
-              srcWebp
-              srcSetWebp
-              originalName
+              ...GatsbyImageSharpFluid
             }
           }
           relativePath
@@ -95,12 +70,7 @@ const query = graphql`
         node {
           childImageSharp {
             fluid(maxWidth: 600) {
-              base64
-              tracedSVG
-              aspectRatio
-              srcWebp
-              srcSetWebp
-              originalName
+              ...GatsbyImageSharpFluid
             }
           }
           relativePath
@@ -113,12 +83,7 @@ const query = graphql`
         node {
           childImageSharp {
             fluid(maxWidth: 600) {
-              base64
-              tracedSVG
-              aspectRatio
-              srcWebp
-              srcSetWebp
-              originalName
+              ...GatsbyImageSharpFluid
             }
           }
           relativePath
@@ -131,12 +96,7 @@ const query = graphql`
         node {
           childImageSharp {
             fluid(maxWidth: 600) {
-              base64
-              tracedSVG
-              aspectRatio
-              srcWebp
-              srcSetWebp
-              originalName
+              ...GatsbyImageSharpFluid
             }
           }
           relativePath
@@ -149,12 +109,7 @@ const query = graphql`
         node {
           childImageSharp {
             fluid(maxWidth: 600) {
-              base64
-              tracedSVG
-              aspectRatio
-              srcWebp
-              srcSetWebp
-              originalName
+              ...GatsbyImageSharpFluid
             }
           }
           relativePath

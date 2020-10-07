@@ -6,21 +6,11 @@ import Img from "gatsby-image"
 import styled from "styled-components"
 
 const query = graphql`
-  {
-    sarasa: allFile(filter: { relativePath: { eq: "sarasa.png" } }) {
-      edges {
-        node {
-          childImageSharp {
-            fluid(maxWidth: 600) {
-              base64
-              tracedSVG
-              aspectRatio
-              srcWebp
-              srcSetWebp
-              originalName
-            }
-          }
-          relativePath
+  query {
+    file(relativePath: { eq: "sarasa.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 700) {
+          ...GatsbyImageSharpFluid
         }
       }
     }
@@ -42,7 +32,7 @@ const SpinningContainer = styled.div`
 
 const Thanks = () => {
   const [isCopied, setisCopied] = useState(false)
-  const { sarasa } = useStaticQuery(query)
+  const sarasa = useStaticQuery(query)
   const time = Date.now()
   const referralCode = `https://subtleindomatches.com/?ref_code=${time}`
   const handleCopy = () => {
@@ -51,7 +41,7 @@ const Thanks = () => {
   return (
     <div className="w-screen h-screen flex justify-center items-center flex-col title px-5 text-center">
       <SpinningContainer className="w-24 h-auto mb-8">
-        <Img fluid={sarasa.edges[0].node.childImageSharp.fluid} />
+        <Img fluid={sarasa.file.childImageSharp.fluid} />
       </SpinningContainer>
       <PecelText text="Thanks" />
       <div>Want to increase your chance to get an invite?</div>

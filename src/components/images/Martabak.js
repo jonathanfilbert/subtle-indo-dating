@@ -21,12 +21,7 @@ const query = graphql`
     file(relativePath: { eq: "martabak.png" }) {
       childImageSharp {
         fluid {
-          base64
-          tracedSVG
-          aspectRatio
-          srcWebp
-          srcSetWebp
-          originalName
+          ...GatsbyImageSharpFluid
         }
       }
     }
