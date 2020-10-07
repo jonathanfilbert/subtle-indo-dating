@@ -1,9 +1,9 @@
 import React from "react"
 import PecelText from "../../components/PecelText"
-import { graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
+import { useStaticQuery, graphql } from "gatsby"
 
-const query = graphql`
+const mainQuery = graphql`
   {
     jis: allFile(filter: { relativePath: { eq: "jis.png" } }) {
       edges {
@@ -120,8 +120,18 @@ const query = graphql`
 `
 
 const Main = () => {
-  const data = useStaticQuery(query)
-  const { bbs, jis, penabur, bsj, sph, hw, union, xxi, bottega } = data
+  const {
+    bbs,
+    jis,
+    penabur,
+    bsj,
+    sph,
+    hw,
+    union,
+    xxi,
+    bottega,
+  } = useStaticQuery(mainQuery)
+  console.log(hw)
   return (
     <>
       <div
@@ -135,22 +145,34 @@ const Main = () => {
             className="text-4xl"
           />
           <div className="w-20 absolute h-auto animate-spin right-0">
-            <Img fluid={hw.edges[0].node.childImageSharp.fluid} />
+            <Img
+              fluid={hw.edges[0].node.childImageSharp.fluid}
+              alt="place_img"
+            />
           </div>
           <div className="w-32 absolute hidden md:block" style={{ zIndex: -1 }}>
-            <Img fluid={union.edges[0].node.childImageSharp.fluid} />
+            <Img
+              fluid={union.edges[0].node.childImageSharp.fluid}
+              alt="place_img"
+            />
           </div>
           <div
             className="w-32 absolute hidden md:block"
             style={{ zIndex: -1, top: "50%", left: "25%" }}
           >
-            <Img fluid={xxi.edges[0].node.childImageSharp.fluid} />
+            <Img
+              fluid={xxi.edges[0].node.childImageSharp.fluid}
+              alt="place_img"
+            />
           </div>
           <div
             className="w-32 absolute hidden md:block animate-pulse"
             style={{ zIndex: -1, top: 0, right: "25%" }}
           >
-            <Img fluid={bottega.edges[0].node.childImageSharp.fluid} />
+            <Img
+              fluid={bottega.edges[0].node.childImageSharp.fluid}
+              alt="place_img"
+            />
           </div>
         </div>
         <div className="title md:text-right md:w-1/3 mt-10 md:self-end relative">
@@ -172,21 +194,41 @@ const Main = () => {
             </div>
             <div className="flex flex-row items-center justify-center md:justify-end">
               <div className="w-24 h-auto">
-                <Img fluid={jis.edges[0].node.childImageSharp.fluid} />
+                <Img
+                  fluid={penabur.edges[0].node.childImageSharp.fluid}
+                  style={{ filter: "grayscale(1)" }}
+                  alt="School_image"
+                />
               </div>
               <div className=" w-20 h-auto">
-                <Img fluid={bbs.edges[0].node.childImageSharp.fluid} />
+                <Img
+                  fluid={bbs.edges[0].node.childImageSharp.fluid}
+                  style={{ filter: "grayscale(1)" }}
+                  alt="School_image"
+                />
               </div>
               <div className=" w-20 h-auto">
-                <Img fluid={penabur.edges[0].node.childImageSharp.fluid} />
+                <Img
+                  fluid={bsj.edges[0].node.childImageSharp.fluid}
+                  style={{ filter: "grayscale(1)" }}
+                  alt="School_image"
+                />
               </div>
             </div>
             <div className="flex flex-row items-center justify-center">
               <div className="w-20 h-auto">
-                <Img fluid={bsj.edges[0].node.childImageSharp.fluid} />
+                <Img
+                  fluid={sph.edges[0].node.childImageSharp.fluid}
+                  style={{ filter: "grayscale(1)" }}
+                  alt="School_image"
+                />
               </div>
               <div className=" w-20 h-auto">
-                <Img fluid={sph.edges[0].node.childImageSharp.fluid} />
+                <Img
+                  fluid={jis.edges[0].node.childImageSharp.fluid}
+                  style={{ filter: "grayscale(1)" }}
+                  alt="School_image"
+                />
               </div>
               <div className=" w-20 h-auto">...</div>
             </div>

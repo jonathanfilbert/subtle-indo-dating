@@ -2,6 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import Img from "gatsby-image"
 import { useStaticQuery, graphql } from "gatsby"
+import MartabakImage from "../../images/martabak.png"
 
 const Wrapper = styled.div`
   @keyframes spin {
@@ -28,7 +29,7 @@ const query = graphql`
   }
 `
 
-const SpinningImage = ({ src, ...rest }) => {
+const Martabak = ({ src, ...rest }) => {
   const data = useStaticQuery(query)
   return (
     <Wrapper {...rest}>
@@ -39,4 +40,4 @@ const SpinningImage = ({ src, ...rest }) => {
   )
 }
 
-export default SpinningImage
+export default Martabak

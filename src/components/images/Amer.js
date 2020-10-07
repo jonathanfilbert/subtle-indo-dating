@@ -2,6 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import Img from "gatsby-image"
 import { useStaticQuery, graphql } from "gatsby"
+import AmerImage from "../../images/amer.png"
 
 const Wrapper = styled.div`
   position: relative;

@@ -7,4 +7,11 @@
 // You can delete this file if you're not using it
 
 import "./src/css/index.css"
-require("babel-polyfill")
+import "intersection-observer"
+// export const onClientEntry = async () => {
+//   console.log("halo", IntersectionObserver)
+//   if (typeof IntersectionObserver === "undefined") {
+//     await import("intersection-observer")
+//     console.log("IntersectionObserver polyfilled ;)")
+//   }
+// }

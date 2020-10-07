@@ -1,9 +1,10 @@
 import React, { useState } from "react"
 import PecelText from "../components/PecelText"
-import { navigate, useStaticQuery } from "gatsby"
+import { navigate } from "gatsby"
 import * as clipboard from "clipboard-polyfill/text"
-import Img from "gatsby-image"
 import styled from "styled-components"
+import { useStaticQuery, graphql } from "gatsby"
+import Img from "gatsby-image"
 
 const query = graphql`
   query {
@@ -45,7 +46,7 @@ const Thanks = () => {
       </SpinningContainer>
       <PecelText text="Thanks" />
       <div>Want to increase your chance to get an invite?</div>
-      <div>Share this code to your friends!</div>
+      <div>Invite your friends with this code!</div>
       <div className="  bg-gray-900 px-3 py-3 mt-5 rounded">
         <div className="font-mono text-gray-100">{referralCode}</div>
       </div>
