@@ -1,31 +1,9 @@
 import React, { useState } from "react"
 import PecelText from "../components/PecelText"
-import { navigate, useStaticQuery, graphql } from "gatsby"
+import { navigate } from "gatsby"
 import * as clipboard from "clipboard-polyfill/text"
-import Img from "gatsby-image"
 import styled from "styled-components"
-
-const query = graphql`
-  {
-    sarasa: allFile(filter: { relativePath: { eq: "sarasa.png" } }) {
-      edges {
-        node {
-          childImageSharp {
-            fluid(maxWidth: 600) {
-              base64
-              tracedSVG
-              aspectRatio
-              srcWebp
-              srcSetWebp
-              originalName
-            }
-          }
-          relativePath
-        }
-      }
-    }
-  }
-`
+import Sarasa from "../images/sarasa.png"
 
 const SpinningContainer = styled.div`
   animation: spin 5s linear infinite;
@@ -42,7 +20,6 @@ const SpinningContainer = styled.div`
 
 const Thanks = () => {
   const [isCopied, setisCopied] = useState(false)
-  const { sarasa } = useStaticQuery(query)
   const time = Date.now()
   const referralCode = `https://subtleindomatches.com/?ref_code=${time}`
   const handleCopy = () => {
@@ -51,11 +28,11 @@ const Thanks = () => {
   return (
     <div className="w-screen h-screen flex justify-center items-center flex-col title px-5 text-center">
       <SpinningContainer className="w-24 h-auto mb-8">
-        <Img fluid={sarasa.edges[0].node.childImageSharp.fluid} />
+        <img src={Sarasa} alt="pen" />
       </SpinningContainer>
       <PecelText text="Thanks" />
       <div>Want to increase your chance to get an invite?</div>
-      <div>Share this code to your friends!</div>
+      <div>Invite your friends with this code!</div>
       <div className="  bg-gray-900 px-3 py-3 mt-5 rounded">
         <div className="font-mono text-gray-100">{referralCode}</div>
       </div>

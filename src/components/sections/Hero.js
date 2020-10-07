@@ -9,6 +9,7 @@ import Wingheng from "../images/WingHeng"
 
 const IndexPage = () => {
   const [user, setUser] = useState({})
+  const [isInviteSent, setIsInviteSent] = useState(false)
   const handleSetName = name => {
     setUser(prev => ({
       ...prev,
@@ -37,6 +38,7 @@ const IndexPage = () => {
     ) {
       alert("Please fill in every field.")
     } else {
+      setIsInviteSent(true)
       await fetch(process.env.GATSBY_ZAPIER_LINK, {
         method: "POST",
         body: JSON.stringify(user),
@@ -76,13 +78,7 @@ const IndexPage = () => {
           <Wingheng className="absolute bottom-0 right-0 hidden md:block" />
         </div>
         <div className="w-full flex flex-col md:flex-row justify-center items-center md:justify-between mt-4 md:mt-8">
-          {/* <div className="flex-1">
-            <Martabak className="hidden md:block" />
-          </div> */}
           <Title />
-          {/* <div className="flex-1">
-            <Amer className="hidden md:block" />
-          </div> */}
         </div>
         <div className="block md:hidden">
           <Martabak />
@@ -129,7 +125,7 @@ const IndexPage = () => {
               className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none mt-3"
               onClick={() => handlePost()}
             >
-              Send me an invite
+              {isInviteSent ? "Sending..." : "Send me an invite"}
             </button>
             <a className="mt-2" href="#main-section">
               Learn more
