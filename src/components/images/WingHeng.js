@@ -42,7 +42,7 @@ const WingHeng = ({ src, ...rest }) => {
   const data = useStaticQuery(query)
   return (
     <Wrapper className="w-32 max-w-xs h-auto" {...rest}>
-      <Img fluid={data.file.childImageSharp.fluid} />
+      <Img fluid={data.file.childImageSharp.fluid} className="jiggle" />
     </Wrapper>
   )
 }
